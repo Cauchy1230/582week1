@@ -1,12 +1,16 @@
-
-def encrypt(key,plaintext):
-    ciphertext=""
-    #YOUR CODE HERE
+def encrypt(key, plaintext):
+    ciphertext = ""
+    for c in plaintext:
+        seq = (ord(c) - 65 + key) % 26
+        n_c = str(seq + 65)
+        ciphertext += n_c
     return ciphertext
 
-def decrypt(key,ciphertext):
-    plaintext=""
-    #YOUR CODE HERE
+
+def decrypt(key, ciphertext):
+    plaintext = ""
+    for c in plaintext:
+        seq = (ord(c) - 65 - key) % 26
+        n_c = str(seq + 65)
+        ciphertext += n_c
     return plaintext
-
-
