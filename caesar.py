@@ -9,8 +9,8 @@ def encrypt(key, plaintext):
 
 def decrypt(key, ciphertext):
     plaintext = ""
-    for c in plaintext:
+    for c in ciphertext:
         seq = (ord(c) - 65 - key) % 26
         n_c = str(seq + 65)
-        ciphertext += n_c
+        plaintext += n_c
     return plaintext
